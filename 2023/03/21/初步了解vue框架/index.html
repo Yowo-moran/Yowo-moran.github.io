@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>初步了解vue框架 | 墨冉的学习记录</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>初步了解vue框架</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-03-21T09:44:08.177Z" id="date"> 2023-03-21</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-03-21T10:32:51.082Z" id="updated"> 2023-03-21</time></div></span></div></div><hr><div id="post-content"><h1 id="一-使用框架进行开发"><a href="#一-使用框架进行开发" class="headerlink" title="一. 使用框架进行开发"></a>一. 使用框架进行开发</h1><h2 id="1-什么是框架？"><a href="#1-什么是框架？" class="headerlink" title="1.什么是框架？"></a>1.什么是框架？</h2><blockquote>
+<p>一个精装房，不需要你装修，你只需要把你想用的东西搬到房子里摆好即可入住。</p>
+</blockquote>
+<h2 id="2-框架开发的好处"><a href="#2-框架开发的好处" class="headerlink" title="2.框架开发的好处"></a>2.框架开发的好处</h2><blockquote>
+<p>减少底层代码的反复书写，只需调用框架的方法就能实现你想要的功能。能够极大的提高项目的编写效率。</p>
+</blockquote>
+<hr>
+<h1 id="二-如何在项目中使用框架"><a href="#二-如何在项目中使用框架" class="headerlink" title="二. 如何在项目中使用框架"></a>二. 如何在项目中使用框架</h1><h2 id="1-使用vue-cli脚手架前的准备工作"><a href="#1-使用vue-cli脚手架前的准备工作" class="headerlink" title="1.使用vue-cli脚手架前的准备工作"></a>1.使用vue-cli脚手架前的准备工作</h2><blockquote>
+<ol>
+<li>安装和配置nodejs  </li>
+<li>使用 npm全局安装 webpack  </li>
+<li>全局安装 vue-cli</li>
+</ol>
+</blockquote>
+<h2 id="2-使用vue-cli快速创建项目"><a href="#2-使用vue-cli快速创建项目" class="headerlink" title="2.使用vue-cli快速创建项目"></a>2.使用vue-cli快速创建项目</h2><blockquote>
+<ol>
+<li>找个文件夹，文件夹下打开终端  </li>
+<li>vue create xxx创建项目  </li>
+<li>cd xxx进入项目目录  </li>
+<li>npm install  </li>
+<li>npm run serve</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="三-使用vue脚手架创建的项目结构"><a href="#三-使用vue脚手架创建的项目结构" class="headerlink" title="三. 使用vue脚手架创建的项目结构"></a>三. 使用vue脚手架创建的项目结构</h1><blockquote>
+<ul>
+<li><strong>public</strong> :存放网站页签图标和heml文件</li>
+<li><strong>src&#x2F;assets</strong> ：存放静态资源</li>
+<li><strong>src&#x2F;components</strong> ：存放所有组件</li>
+<li><strong>src&#x2F;App.vue</strong> :是存放所有组件的父组件</li>
+<li><strong>src&#x2F;main.js</strong> :执行<strong>npm run serve</strong> 后首先运行的文件</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="四-Vm实例对象中的属性"><a href="#四-Vm实例对象中的属性" class="headerlink" title="四.Vm实例对象中的属性"></a>四.Vm实例对象中的属性</h1><blockquote>
+<ul>
+<li><h3 id="el-指定-vm-的挂载元素，也可通过-mount-“-root”-指定挂载点"><a href="#el-指定-vm-的挂载元素，也可通过-mount-“-root”-指定挂载点" class="headerlink" title="el: 指定 vm 的挂载元素，也可通过 $mount(“#root”) 指定挂载点"></a><strong>el:</strong> 指定 vm 的挂载元素，也可通过 $mount(“#root”) 指定挂载点</h3></li>
+<li><h3 id="data-当一个-Vue-实例被创建时，它向-Vue-的响应式系统中加入了其-data-对象中能找到的所有的属性。当这些属性的值发生改变时，html-视图将也会产生相应的变化。"><a href="#data-当一个-Vue-实例被创建时，它向-Vue-的响应式系统中加入了其-data-对象中能找到的所有的属性。当这些属性的值发生改变时，html-视图将也会产生相应的变化。" class="headerlink" title="data: 当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。当这些属性的值发生改变时，html 视图将也会产生相应的变化。"></a><strong>data:</strong> 当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。当这些属性的值发生改变时，html 视图将也会产生相应的变化。</h3></li>
+<li><h3 id="methods-用来存放触发事件的内容"><a href="#methods-用来存放触发事件的内容" class="headerlink" title="methods: 用来存放触发事件的内容"></a><strong>methods:</strong> 用来存放触发事件的内容</h3></li>
+<li><h3 id="computed-计算属性，computed-是通过-data-中的已有属性拼凑而成。借助了Object-defineProperty-的-getter-和-setter。-get-初始化和每次-computed-依赖-data-中的数据改变时调用。与-methods-相比，有缓存机制。计算属性最终会出现在-vm-上，计算属性被修改时，必须写-set-函数改变-data-中的依赖数据，进而引起计算属性的变化。"><a href="#computed-计算属性，computed-是通过-data-中的已有属性拼凑而成。借助了Object-defineProperty-的-getter-和-setter。-get-初始化和每次-computed-依赖-data-中的数据改变时调用。与-methods-相比，有缓存机制。计算属性最终会出现在-vm-上，计算属性被修改时，必须写-set-函数改变-data-中的依赖数据，进而引起计算属性的变化。" class="headerlink" title="computed: 计算属性，computed 是通过 data 中的已有属性拼凑而成。借助了Object. defineProperty 的 getter 和 setter。 get 初始化和每次 computed 依赖 data 中的数据改变时调用。与 methods 相比，有缓存机制。计算属性最终会出现在 vm 上，计算属性被修改时，必须写 set 函数改变 data 中的依赖数据，进而引起计算属性的变化。"></a><strong>computed:</strong> 计算属性，computed 是通过 data 中的已有属性拼凑而成。借助了Object. defineProperty 的 getter 和 setter。 get 初始化和每次 computed 依赖 data 中的数据改变时调用。与 methods 相比，有缓存机制。计算属性最终会出现在 vm 上，计算属性被修改时，必须写 set 函数改变 data 中的依赖数据，进而引起计算属性的变化。</h3></li>
+<li><h3 id="watch-监听属性，当监视的属性变化，handler-自动调用。通过-watch-配置或-watch-监视"><a href="#watch-监听属性，当监视的属性变化，handler-自动调用。通过-watch-配置或-watch-监视" class="headerlink" title="watch: 监听属性，当监视的属性变化，handler 自动调用。通过 watch 配置或 $watch 监视"></a><strong>watch:</strong> 监听属性，当监视的属性变化，handler 自动调用。通过 watch 配置或 $watch 监视</h3></li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="五-V-指令"><a href="#五-V-指令" class="headerlink" title="五.V-指令"></a>五.V-指令</h1><h2 id="1-数据绑定：v-bind-v-model"><a href="#1-数据绑定：v-bind-v-model" class="headerlink" title="1.数据绑定：v-bind   v-model"></a><strong>1.数据绑定</strong>：v-bind   v-model</h2><blockquote>
+<ul>
+<li>Vue中有2种数据绑定的方式：  <ol>
+<li>单向绑定(v-bind)：数据只能从data流向页面。  </li>
+<li>双向绑定(v-model)：数据不仅能从data流向页面，还可以从页面流向data。</li>
+</ol>
+</li>
+<li>备注：  <ol>
+<li>双向绑定一般都应用在表单类元素上（如：input、select等）   </li>
+<li>v-model:value 可以简写为 v-model，因为v-model默认收集的就是value值。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h2 id="2-条件渲染：v-if-v-else-if-v-else-v-show"><a href="#2-条件渲染：v-if-v-else-if-v-else-v-show" class="headerlink" title="2.条件渲染：v-if   v-else-if   v-else   v-show"></a><strong>2.条件渲染</strong>：v-if   v-else-if   v-else   v-show</h2><blockquote>
+<ul>
+<li><ol>
+<li>v-show  展示或者不展示元素</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>v-if  创建或者销毁元素<br>备注：  <ul>
+<li>非常频繁地切换，则使用 v-show 较好</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如果在运行时条件很少改变，则使用 v-if 较好</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="3-渲染文本-v-text-v-html"><a href="#3-渲染文本-v-text-v-html" class="headerlink" title="3.渲染文本: v-text   v-html"></a><strong>3.渲染文本</strong>: v-text   v-html</h2><blockquote>
+<ul>
+<li>v-text：向其所在的节点中渲染文本内容（innerText）</li>
+<li>v-html：向指定节点中渲染包含html结构的内容（ innerHTML）<br><strong>与插值语法的区别</strong>：<ol>
+<li>会替换掉节点中所有的内容，则不会<br><strong>严重注意</strong>：v-html有安全性问题！！！！  <ol>
+<li>在网站上动态渲染任意HTML是非常危险的，容易导致XSS攻击。  </li>
+<li>一定要在可信的内容上使用v-html，永不要用在用户提交的内容上！</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h2 id="4-循环渲染-v-for"><a href="#4-循环渲染-v-for" class="headerlink" title="4.循环渲染: v-for"></a><strong>4.循环渲染</strong>: v-for</h2><blockquote>
+<ul>
+<li>当我们有一组数据需要进行渲染时，我们就可以使用v-for来完成。  <ol>
+<li>v-for的语法类似于JavaScript中的for循环  </li>
+<li>遍历数组或者对象，配合key属性使用</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/03/21/%E5%88%9D%E8%AF%86Vue/">初识Vue Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">墨冉い</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">一. 使用框架进行开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%A1%86%E6%9E%B6%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1.什么是框架？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">1.2.</span> <span class="toc-text">2.框架开发的好处</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">二. 如何在项目中使用框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8vue-cli%E8%84%9A%E6%89%8B%E6%9E%B6%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.1.</span> <span class="toc-text">1.使用vue-cli脚手架前的准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8vue-cli%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.2.</span> <span class="toc-text">2.使用vue-cli快速创建项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BD%BF%E7%94%A8vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">三. 使用vue脚手架创建的项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-Vm%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">四.Vm实例对象中的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#el-%E6%8C%87%E5%AE%9A-vm-%E7%9A%84%E6%8C%82%E8%BD%BD%E5%85%83%E7%B4%A0%EF%BC%8C%E4%B9%9F%E5%8F%AF%E9%80%9A%E8%BF%87-mount-%E2%80%9C-root%E2%80%9D-%E6%8C%87%E5%AE%9A%E6%8C%82%E8%BD%BD%E7%82%B9"><span class="toc-number">4.0.1.</span> <span class="toc-text">el: 指定 vm 的挂载元素，也可通过 $mount(“#root”) 指定挂载点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-%E5%BD%93%E4%B8%80%E4%B8%AA-Vue-%E5%AE%9E%E4%BE%8B%E8%A2%AB%E5%88%9B%E5%BB%BA%E6%97%B6%EF%BC%8C%E5%AE%83%E5%90%91-Vue-%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%8A%A0%E5%85%A5%E4%BA%86%E5%85%B6-data-%E5%AF%B9%E8%B1%A1%E4%B8%AD%E8%83%BD%E6%89%BE%E5%88%B0%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%82%E5%BD%93%E8%BF%99%E4%BA%9B%E5%B1%9E%E6%80%A7%E7%9A%84%E5%80%BC%E5%8F%91%E7%94%9F%E6%94%B9%E5%8F%98%E6%97%B6%EF%BC%8Chtml-%E8%A7%86%E5%9B%BE%E5%B0%86%E4%B9%9F%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%9B%B8%E5%BA%94%E7%9A%84%E5%8F%98%E5%8C%96%E3%80%82"><span class="toc-number">4.0.2.</span> <span class="toc-text">data: 当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。当这些属性的值发生改变时，html 视图将也会产生相应的变化。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#methods-%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">4.0.3.</span> <span class="toc-text">methods: 用来存放触发事件的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#computed-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%EF%BC%8Ccomputed-%E6%98%AF%E9%80%9A%E8%BF%87-data-%E4%B8%AD%E7%9A%84%E5%B7%B2%E6%9C%89%E5%B1%9E%E6%80%A7%E6%8B%BC%E5%87%91%E8%80%8C%E6%88%90%E3%80%82%E5%80%9F%E5%8A%A9%E4%BA%86Object-defineProperty-%E7%9A%84-getter-%E5%92%8C-setter%E3%80%82-get-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%AF%8F%E6%AC%A1-computed-%E4%BE%9D%E8%B5%96-data-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%94%B9%E5%8F%98%E6%97%B6%E8%B0%83%E7%94%A8%E3%80%82%E4%B8%8E-methods-%E7%9B%B8%E6%AF%94%EF%BC%8C%E6%9C%89%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6%E3%80%82%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E6%9C%80%E7%BB%88%E4%BC%9A%E5%87%BA%E7%8E%B0%E5%9C%A8-vm-%E4%B8%8A%EF%BC%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E8%A2%AB%E4%BF%AE%E6%94%B9%E6%97%B6%EF%BC%8C%E5%BF%85%E9%A1%BB%E5%86%99-set-%E5%87%BD%E6%95%B0%E6%94%B9%E5%8F%98-data-%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96%E6%95%B0%E6%8D%AE%EF%BC%8C%E8%BF%9B%E8%80%8C%E5%BC%95%E8%B5%B7%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%98%E5%8C%96%E3%80%82"><span class="toc-number">4.0.4.</span> <span class="toc-text">computed: 计算属性，computed 是通过 data 中的已有属性拼凑而成。借助了Object. defineProperty 的 getter 和 setter。 get 初始化和每次 computed 依赖 data 中的数据改变时调用。与 methods 相比，有缓存机制。计算属性最终会出现在 vm 上，计算属性被修改时，必须写 set 函数改变 data 中的依赖数据，进而引起计算属性的变化。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#watch-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%EF%BC%8C%E5%BD%93%E7%9B%91%E8%A7%86%E7%9A%84%E5%B1%9E%E6%80%A7%E5%8F%98%E5%8C%96%EF%BC%8Chandler-%E8%87%AA%E5%8A%A8%E8%B0%83%E7%94%A8%E3%80%82%E9%80%9A%E8%BF%87-watch-%E9%85%8D%E7%BD%AE%E6%88%96-watch-%E7%9B%91%E8%A7%86"><span class="toc-number">4.0.5.</span> <span class="toc-text">watch: 监听属性，当监视的属性变化，handler 自动调用。通过 watch 配置或 $watch 监视</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-V-%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">五.V-指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%EF%BC%9Av-bind-v-model"><span class="toc-number">5.1.</span> <span class="toc-text">1.数据绑定：v-bind   v-model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%EF%BC%9Av-if-v-else-if-v-else-v-show"><span class="toc-number">5.2.</span> <span class="toc-text">2.条件渲染：v-if   v-else-if   v-else   v-show</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B8%B2%E6%9F%93%E6%96%87%E6%9C%AC-v-text-v-html"><span class="toc-number">5.3.</span> <span class="toc-text">3.渲染文本: v-text   v-html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BE%AA%E7%8E%AF%E6%B8%B2%E6%9F%93-v-for"><span class="toc-number">5.4.</span> <span class="toc-text">4.循环渲染: v-for</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{code.findCode();}</script><script src="/js/arknights.js"></script><script src="/js/pjax.js"></script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
